@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n$hjk$zw!^%o+l8fh_ne&$$qv5kby+_d92o5e1xqn+i%xvl1i2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['askai-django-assistant.onrender.com','*']
 
