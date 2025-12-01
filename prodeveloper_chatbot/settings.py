@@ -124,3 +124,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 TECHBRAIN_API_KEY = 'acfc5b2e48d066142761f35af15c691db8da40dcc3db240d38b0fd1119756030'
+
+# trusted host 
+CSRF_TRUSTED_ORIGINS = [
+    'https://askai-django-assistant.onrender.com'
+]
+
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS",
+    "askai-django-assistant.onrender.com"
+).split(",")
+
+CSRF_TRUSTED_ORIGINS = os.getenv(
+    "CSRF_TRUSTED_ORIGINS",
+    "https://askai-django-assistant.onrender.com"
+).split(",")
