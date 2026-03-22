@@ -1,0 +1,26 @@
+{
+  "id": "oc1dWFe-62bZhn-9e01176628d19371",
+  "object": "chat.completion",
+  "created": 1774139466,
+  "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+  "prompt": [],
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "seed": 4637922552416765000,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "role": "assistant",
+        "content": "Hello. How can I assist you today?",
+        "tool_calls": []
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 36,
+    "completion_tokens": 10,
+    "total_tokens": 46,
+    "cached_tokens": 0
+  }
+}

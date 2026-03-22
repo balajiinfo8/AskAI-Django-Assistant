@@ -1,0 +1,9 @@
+{
+  "id": "oc1c9XX-2kFHot-9e0110f71be09380",
+  "error": {
+    "message": "Unable to access model meta-llama/Meta-Llama-3-8B-Instruct-Turbo. Please visit https://api.together.ai/models to view the list of supported models.",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": "model_not_available"
+  }
+}

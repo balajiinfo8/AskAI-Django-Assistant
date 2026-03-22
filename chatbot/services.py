@@ -23,7 +23,7 @@ class TogetherAIClient:
         # 6. way to get the response from the AI server 
         
         data = {
-            "model": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
             "messages": [
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_message}
@@ -50,8 +50,12 @@ class TogetherAIClient:
             # json_repo["choices"][0]["message"]["content"]
             return json_repo.get("choices", [{}])[0].get("message", {}).get("content", "no content")
 
+        except requests.exceptions.HTTPError as e:
+            err_msg = e.response.text if e.response else "No response body"
+            return f"Request Error : {str(e)}\nAPI Details: {err_msg}"
+
         except requests.exceptions.RequestException as e:
             return f"Request Error : {str(e)}"
 
         except Exception as e:
-            return f"Exception Error : {str(e)}\nRaw: {response.text}"
+            return f"Exception Error : {str(e)}"

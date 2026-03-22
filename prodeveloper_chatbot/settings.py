@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n$hjk$zw!^%o+l8fh_ne&$$qv5kby+_d92o5e1xqn+i%xvl1i2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = ['askai-django-assistant.onrender.com','*']
-
-
-# Application definition
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS",
+    "localhost,127.0.0.1,askai-django-assistant.onrender.com"
+).split(",")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -123,18 +123,18 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-TECHBRAIN_API_KEY = 'acfc5b2e48d066142761f35af15c691db8da40dcc3db240d38b0fd1119756030'
+TECHBRAIN_API_KEY = 'tgp_v1_TpAA05wbWOQPWM2fVcgdNIWN68CmP52rrKMbamUuHss'
 
 # trusted host 
 CSRF_TRUSTED_ORIGINS = [
     'https://askai-django-assistant.onrender.com'
 ]
 
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = os.getenv(
     "ALLOWED_HOSTS",
-    "askai-django-assistant.onrender.com"
+    "localhost,127.0.0.1,askai-django-assistant.onrender.com"
 ).split(",")
 
 CSRF_TRUSTED_ORIGINS = os.getenv(
